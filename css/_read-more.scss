@@ -1,0 +1,311 @@
+﻿/// <reference path="dsplus-styles.scss" />
+
+/*#region ----------------------------*\
+  #ARTICLE
+\*------------------------------------*/
+.article{
+	color: $dove-gray;
+	@include order(2);
+
+	&__hero{
+		margin-bottom: 1.5rem;
+	}
+
+	&__heading {
+		color: $mine-shaft;
+	}
+
+	&__img--sm{
+        float: right;
+        margin-bottom: 1rem;
+        margin-left: $gutter_pc;
+        @include spacing(width, 11);
+    }
+
+	&__copy{
+		&--video{
+			margin-bottom: 3rem;
+		}
+		&--no-hero{
+			@extend .article__copy;
+			padding-top: 1rem;
+		}
+
+		ul, ol {
+			padding-left: 30px;
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+			li {
+				margin-bottom: .2rem;
+			}
+		}		
+	}
+
+	&__accordion {
+		&__copy{
+			padding-bottom: 1rem;
+		}
+		
+		&__heading {
+			font-weight: 400;
+			margin-top: 1rem;
+		}
+		&__btn {
+			font-weight: 200;
+			margin-top: 1rem;
+		}
+	}
+
+	&__cta{
+		margin-left: $gutter_pc * 2;
+		
+		&:first-child{
+			margin-left: 0;
+		}
+
+		&__wrap {
+			margin-top: 1rem;
+			margin-bottom: 2rem;
+		}
+	}
+
+	&__return-to-newsletter{
+		padding: 1rem 0;
+		border-top: 1px solid $dusty-gray;
+		border-bottom: 1px solid $dusty-gray;
+		margin-bottom: 2rem;
+		position: relative;
+
+		&__link{
+			font-size: 1.1rem;
+			font-weight: bold;
+			@include display-inline-flex;
+			@include align-items(flex-end);
+
+			&:before {
+				display: block;
+				padding: 0 .5rem .25rem;
+				content: "\2039";
+				color: $white;
+				background-color: $crimson;
+				font-size: 1.5rem;
+				line-height:1;
+				margin-right: 1rem;
+				vertical-align: .5rem;
+				font-weight: 400;
+			}
+		}
+		
+	
+	}
+
+	&__aside{
+		@include order(1);
+		&__heading{
+			background-color: $crimson;
+			padding: .25rem $one_col;
+			color: $white;
+		}
+	}
+
+	&__social {
+		background: $mystic;
+		margin-right: $one_col * 2;
+		@include display-flex;
+		@include align-items(center);
+
+		&__copy{
+			@include flex-grow(1);
+			text-align: center;
+			font-size: .75rem;
+			padding: .25rem $one_col;
+			text-transform:uppercase;
+		}
+
+		&__icon{
+			display: block;
+			width: 2.5rem;
+			height: 2rem;
+			background: $red-berry;
+			border: 1px solid $red-berry;
+
+			&--fb{
+				background: $fb-blue url(../../../images/dsplus/refresh/fb.png) no-repeat center;
+				border-color: $fb-blue;
+
+				&:hover{
+					background-color: $white;
+					background-image: url(../../../images/dsplus/refresh/fb_hover.png);
+				}
+			}
+
+			&--tw{
+				background: $tw-blue url(../../../images/dsplus/refresh/twitter.png) no-repeat center;
+				border-color: $tw-blue;
+
+				&:hover{
+					background-color: $white;
+					background-image: url(../../../images/dsplus/refresh/twitter_hover.png);
+				}
+			}
+		}
+		   
+	}
+
+	&__wrap--msc {
+		padding-top: 2rem;
+		padding-bottom: 4rem;
+	}
+}
+/*#endregion*/
+
+
+
+
+
+/*#region ----------------------------*\
+  #FEEDBACK ARTICLE
+\*------------------------------------*/
+
+.feedback {
+	color: $dove-gray;
+	padding-top: 3rem;
+	margin-top: 1rem;
+	text-align: center;
+	@include spacing(padding-left, 1);
+	@include spacing(padding-right, 1);
+
+	&__heading {
+		color: $azure-radiance;
+		font-weight: 700;
+		font-size:2.5rem;
+	}
+
+	&__sub-heading {
+		font-weight: 700;
+		padding-bottom: 6rem;
+		padding-top: 2rem;
+	}
+
+	&__cta {
+		margin: 1.5rem;
+	}
+
+	&__img {
+		max-width: 100%;
+		height: auto;
+		margin: 2rem auto 0;
+	}
+
+	&__webform {
+		padding-top: 2rem;
+		padding-bottom: 6rem;
+		@include spacing(padding-left, 1);
+		@include spacing(padding-right, 1);
+		text-align: left;
+	}
+}
+
+
+.feedback__input__container{
+    @include display-flex;
+    @include align-items(flex-end);
+}
+
+.feedback__input__radio--checkbox{
+    @include spacing(margin-left, .5);
+    @include spacing(margin-right, 1);
+    height: 18px;
+    width: 18px;
+	margin-bottom: 6px;
+}
+
+.feedback__input{
+	margin-top: .57rem;
+    @include flex-grow(1);
+	color: black
+}
+
+
+
+/*#region ----------------------------*\
+  #In This Issue
+\*------------------------------------*/
+.issue-links{
+    padding: 0 ($one_col * 2) 1rem $one_col;
+	list-style: none;
+	font-weight: 700;
+
+    &__item{
+		padding: .3rem 0;
+     }
+
+	&__link{
+		text-decoration: underline;
+	}
+
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #MSC
+\*------------------------------------*/
+.webform{
+	&__wrapper--aside{
+		padding: .5rem ($one_col * 2) 1rem $one_col;
+	}
+	&--aside,
+	&__success--aside{
+		padding-bottom: 1rem;
+	}
+}
+/*#endregion*/
+
+
+
+
+
+@media screen and (max-width:1055px){
+    .article{
+		&__copy,
+		&__cta__wrap,
+		&__return-to-newsletter{
+			padding-left: $margin_outer;
+			padding-right: $margin_outer;
+		}
+    }
+}
+
+@media screen and (max-width:780px){
+    .feedback {
+		margin-top: 0;
+    }
+}
+
+
+
+@media screen and (max-width:600px){
+
+    .article__social{
+		display: none;
+    }
+	.article__cta,
+	.article__cta:first-child{
+		margin: 0 auto .5rem;
+	}
+
+}
+
+@media screen and (max-width:480px){
+
+    .article__img--sm{
+        width: 100%;
+        margin-top: 0;
+        margin-left: 0;
+        margin-bottom: 2rem;
+        
+    }
+}

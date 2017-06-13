@@ -1,0 +1,412 @@
+﻿/*#region ----------------------------*\
+  #VARIABLES
+\*------------------------------------*/
+
+// Color naming convention: http://chir.ag/projects/name-that-color/
+
+$black: #000000;        
+
+$mine-shaft: #333;
+$dove-gray: #666;
+$gray: #878787;
+$dusty-gray: #999;
+$mystic: #EDF0F5;
+$gallery: #ebebeb;
+$wild-sand: #f4f4f4;
+$white: #ffffff; 
+
+$crimson: #d71921;
+$red-berry: #990000;
+
+$azure-radiance: #0088fc;
+
+$fb-blue: #3b5893;
+$tw-blue: #55acee;
+
+// TRANSITION SPEED
+$slow: 500ms;
+$fast: 250ms;
+
+
+// GRID
+$max_columns: 24;
+$gutter_px: 0;
+$gutter_pc: 1%;
+$margin_outer: 3.75%;
+$one_col: (100% - (($max_columns - 1) * $gutter_pc)) / $max_columns;
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #FONTS
+\*------------------------------------*/
+
+/**
+ * @license
+ * MyFonts Webfont Build ID 3358131, 2017-03-13T10:02:35-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: HelveticaNeueLTStd-Lt by Linotype
+ * URL: http://www.myfonts.com/fonts/linotype/neue-helvetica/helvetica-45-light/
+ * 
+ * Webfont: HelveticaNeueLTStd-Bd by Linotype
+ * URL: http://www.myfonts.com/fonts/linotype/neue-helvetica/helvetica-75-bold/
+ * 
+ * Webfont: HelveticaNeueLTStd-Md by Linotype
+ * URL: http://www.myfonts.com/fonts/linotype/neue-helvetica/helvetica-65-medium/
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3358131
+ * Licensed pageviews: 2,500,000
+ * Webfonts copyright: Copyright &#x00A9; 1988, 1990, 1993, 2002 Adobe Systems Incorporated.  All Rights Reserved. &#x00A9; 1981, 2002 Heidelberger Druckmaschinen AG. All rights reserved.
+ * 
+ * © 2017 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/333db3");
+  
+@font-face {
+	font-family: 'Helvetica Neue';
+	src: url('../../../fonts/dsplus/333DB3_0_0.eot');src: url('../../../fonts/dsplus/333DB3_0_0.eot?#iefix') format('embedded-opentype'),url('../../../fonts/dsplus/333DB3_0_0.woff2') format('woff2'),url('../../../fonts/dsplus/333DB3_0_0.woff') format('woff'),url('../../../fonts/dsplus/333DB3_0_0.ttf') format('truetype');
+	font-weight: 200;
+}
+ 
+  
+@font-face {
+	font-family: 'Helvetica Neue';
+	src: url('../../../fonts/dsplus/333DB3_1_0.eot');src: url('../../../fonts/dsplus/333DB3_1_0.eot?#iefix') format('embedded-opentype'),url('../../../fonts/dsplus/333DB3_1_0.woff2') format('woff2'),url('../../../fonts/dsplus/333DB3_1_0.woff') format('woff'),url('../../../fonts/dsplus/333DB3_1_0.ttf') format('truetype');
+	font-weight: 700;
+}
+   
+@font-face {
+	font-family: 'Helvetica Neue';
+	src: url('../../../fonts/dsplus/333DB3_2_0.eot');src: url('../../../fonts/dsplus/333DB3_2_0.eot?#iefix') format('embedded-opentype'),url('../../../fonts/dsplus/333DB3_2_0.woff2') format('woff2'),url('../../../fonts/dsplus/333DB3_2_0.woff') format('woff'),url('../../../fonts/dsplus/333DB3_2_0.ttf') format('truetype');
+	font-weight: 400;
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #MIXINS - GRID
+\*------------------------------------*/
+
+@mixin span($num) {
+    width: ($one_col * $num) + ($gutter_pc * ($num - 1));
+	margin-left: $gutter_pc;
+    float: left;
+}
+
+@mixin flex-span($num) {
+	@include flex(1 1 (($one_col * $num) + ($gutter_pc * ($num - 1))))
+}
+
+@mixin spacing($type, $width) {
+	#{$type}:($one_col * $width) + ($gutter_pc * $width);
+}
+
+@mixin col-full-width{
+    width: 100%;
+    margin-left: 0;
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #MIXINS - FLEXBOX (PARENT)
+\*------------------------------------*/
+
+@mixin display-flex {
+	display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+	display: -ms-flexbox;  /* TWEENER - IE 10 */
+	display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+	display: flex;
+}
+
+@mixin display-inline-flex {
+	display: -webkit-inline-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+	display: -ms-inline-flexbox;  /* TWEENER - IE 10 */
+	display: -webkit-inline-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+	display: inline-flex;
+}
+
+@mixin flex-direction($direction){          // row | row-reverse | column | column-reverse
+    -webkit-flex-direction: $direction;
+        -ms-flex-direction: $direction;
+            flex-direction: $direction;
+}
+
+@mixin flex-wrap($wrap){                         // nowrap | wrap | wrap-reverse
+	    -ms-flex-wrap: $wrap;
+	-webkit-flex-wrap: $wrap;
+	        flex-wrap: $wrap;
+}
+
+@mixin flex-flow($direction, $wrap){        // <‘flex-direction’> || <‘flex-wrap’>
+    -webkit-flex-flow: $direction $wrap;
+        -ms-flex-flow: $direction $wrap;
+            flex-flow: $direction $wrap;
+}
+
+@mixin justify-content($justify){           // flex-start | flex-end | center | space-between | space-around
+    -webkit-justify-content: $justify;
+        -ms-justify-content: $justify;
+            justify-content: $justify;
+              -ms-flex-pack: $justify;
+}
+
+@mixin align-items($align){                 // flex-start | flex-end | center | baseline | stretch 
+    -webkit-flex-item-align: $align;
+        -webkit-align-items: $align;
+             -ms-flex-align: $align;
+              -ms-flex-pack: $align;
+                align-items: $align;
+
+}
+
+@mixin align-content($align-content) {      // flex-start | flex-end | center | space-between | space-around | stretch
+    -webkit-align-content: $align-content;        
+        -ms-align-content: $align-content;            
+            align-content: $align-content;
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #MIXINS - FLEXBOX (CHILD)
+\*------------------------------------*/
+
+@mixin order($order){                       // <number>
+	-webkit-flex-order: $order;
+	    -ms-flex-order: $order;
+	     -webkit-order: $order;
+	             order: $order;
+}
+
+@mixin flex-grow($grow){                    // <number>
+    -webkit-flex-grow: $grow;
+        -ms-flex-grow: $grow;
+            flex-grow: $grow;
+}
+
+@mixin flex-shrink($shrink){                // <number>
+    -webkit-flex-shrink: $shrink;
+               -ms-flex: $shrink;
+            flex-shrink: $shrink;
+}
+
+@mixin flex-basis($size){                   // <length> | auto;
+    -webkit-flex-basis: $size;
+        -ms-flex-basis: $size;
+            flex-basis: $size;
+}
+
+@mixin flex($flex...) {                     // none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+       -moz-flex: $flex;
+         -o-flex: $flex;
+    -webkit-flex: $flex;
+            flex: $flex;
+}
+
+@mixin align-self($align-self) {            // auto | flex-start | flex-end | center | baseline | stretch
+    -webkit-align-self: $align-self;        
+    -ms-align-self: $align-self;            
+    align-self: $align-self;
+}
+
+@mixin flex-basis($width) {
+    -webkit-flex-basis: $width;
+    -moz-flex-basis: $width;
+    -ms-flex-preferred-size: $width;
+    flex-basis: $width;
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #MIXINS - TRANSITIONS/TRANSFORM
+\*------------------------------------*/
+
+@mixin transform($transform...) {
+      -moz-transform: $transform;
+           transform: $transform;
+}
+
+@mixin transition($transition...) {
+    -webkit-transition: $transition;
+            transition: $transition;
+}
+@mixin transition-property($property...) {
+    -webkit-transition-property: $property;
+            transition-property: $property;
+}
+@mixin transition-duration($duration...) {
+    -webkit-transition-duration: $duration;
+            transition-duration: $duration;
+}
+@mixin transition-timing-function($timing...) {
+    -webkit-transition-timing-function: $timing;
+            transition-timing-function: $timing;
+}
+@mixin transition-delay($delay...) {
+    -webkit-transition-delay: $delay;
+            transition-delay: $delay;
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #MIXINS - JAVASCRIPT ACCORDION
+\*------------------------------------*/
+@mixin accordionTool() {
+    overflow: hidden;
+	position: relative;
+	height: 0;
+	width: 100%;
+	&.active {
+		height: auto;
+	}
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #HAMBURGER BUTTON
+\*------------------------------------*/
+@mixin hamburger-button($width, $height, $color, $spacing, $speed, $activeColor){
+	span {
+		margin: 0 auto;
+		width: $width; //20
+		height: $height; //3
+		background-color: $color;
+		display: block;
+		@include transition-property(background-color);
+		@include transition-duration(0s);
+		@include transition-delay($speed);
+		
+		&:before,
+		&:after {
+			position: absolute;
+			content: '';
+			width: $width;
+			height: $height;
+			background-color: $black;
+			display: block;
+			@include transition-property(transform, background-color, margin);
+			@include transition-duration($speed, $speed, $speed);
+			@include transition-delay(0s, 0s, $speed);
+		}
+
+		&:before {
+			margin-top: ($height + $spacing) * -1;
+		}
+
+		&:after {
+			margin-top: $height + $spacing;
+		}
+	}
+
+	&.active span{
+		background-color: transparent;
+		@include transition-property(background-color);
+		@include transition-duration(0s);
+		@include transition-delay($speed);
+
+		&:before,
+		&:after{
+			@include transition-property(margin, transform, background-color);
+			@include transition-duration($speed, $speed, $speed);
+			@include transition-delay(0s, $speed, $speed);
+		}
+
+		&:before {
+			margin-top: 0;
+			background-color: $activeColor;
+			@include transform(rotate(45deg));
+		}
+	
+		&:after {
+			margin-top: 0;
+			background-color: $activeColor;
+			@include transform(rotate(-45deg));
+		}
+
+	}
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #KEYFRAMES - ANIMATIONS
+\*------------------------------------*/
+
+@keyframes grow {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes sk-bouncedelay {
+    0%, 80%, 100% { -webkit-transform: scale(0) }
+    40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+    0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    }
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #PARTIALS
+\*------------------------------------*/
+@import "_normalize.scss";
+@import "_grid-24.scss";
+@import "_global.scss";
+@import "_webform.scss";
+@import "_model-details.scss";
+@import "_read-more.scss";
+@import "_model-lineup.scss";
+@import "_offer.scss";
+
+/*#endregion*/

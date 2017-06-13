@@ -1,0 +1,1176 @@
+﻿/// <reference path="dsplus-styles.scss" />
+
+
+/*#region ----------------------------*\
+  #GENERIC
+\*------------------------------------*/
+
+*, *:before, *:after{
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body, html{
+    font: 400 14px/1.43 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color: $black;
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+}
+
+a{
+    text-decoration: none;
+}
+
+em {
+	font-style: italic;
+}
+
+/*-- #WEBFORM INPUTS/LABELS --*/
+label, 
+input, 
+select, 
+textarea{
+	display: block;
+	width: 100%;
+	outline: 0;
+}
+
+input, 
+select, 
+textarea{
+	border: 1px solid $dusty-gray;
+	
+	&:focus{
+		border: 1px solid $mine-shaft;
+		outline: 0;
+	}
+	&[hidden]{
+		display: none;
+	}
+}
+input,
+textarea{
+	padding-left: .2em;
+	padding-right: .2em;
+}
+select{
+	padding-left: .1em;
+	padding-right: .1em;
+}
+input,
+select{
+	height: 2rem;
+}
+
+select:disabled,
+label.disabled{
+	opacity: .6;
+}
+input.inputRequired, 
+select.inputRequired,
+textarea.inputRequired{
+	border-top: 1px solid red;
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #IMAGES
+\*------------------------------------*/
+
+.img{
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    display: block;
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #TYPOGRAPHY
+\*------------------------------------*/
+
+.heading{
+    line-height: 1.4em;
+}
+
+h1{
+    font-size: 2.85rem;
+	margin-bottom: 1.5rem;
+}
+
+h2{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+h3{
+    font-size: 1.72rem;
+    margin-bottom: .5rem;
+}
+
+h4{
+    font-size: 1.25rem;
+	font-weight: 700;
+	margin-bottom: .5rem;
+}
+
+h5{
+    font-size: 1.25rem;
+	font-weight: 700;
+	margin-bottom: .25rem;
+}
+
+h6{
+	font-weight: 700;
+	text-transform: uppercase;
+    font-size: 1rem;
+}
+
+p{
+    margin: .57rem 0;
+
+}
+
+.text--left{
+    text-align: left;
+}
+
+.text--right{
+    text-align: right;
+}
+
+.text--center{
+    text-align: center;
+}
+
+.text--small{
+    font-size: .75rem
+}
+
+.text--bold{
+    font-weight: 700;
+}
+
+.text--white{
+    color: $white;
+}
+
+.text--italic{
+    font-style: italic;
+}
+.text--disc {
+	color: $gray;
+	font-size: .75rem;
+	line-height: 1.75;
+	ul,
+    ol{
+        margin-left: 1.25rem;
+		margin-bottom: 2rem;
+
+        li{
+            padding-left: 1rem;
+			margin-bottom: 1rem;
+        }
+
+    }
+	p{
+		margin-bottom: 1rem;
+		&:first-of-type{
+			margin-top: 0;
+		}
+	}
+}
+
+
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #BUTTONS / CTAs
+\*------------------------------------*/
+
+a{
+    color: $crimson;
+    text-decoration: none;
+    @include transition(color $fast ease-in-out);
+
+    &:hover{
+        color: $red-berry;
+        @include transition(color $fast ease-in-out);
+    }
+
+}
+
+
+/*------ #CTA BUTTONS --------*/
+
+.btn{
+	padding: 2rem;
+	position: relative;
+    text-align: center;
+	min-width: 140px;
+	color: $white;
+	font-size: .825em;
+	text-transform: uppercase;
+	background: $black;	
+	display: inline-block;
+	cursor: pointer;
+    @include transition(background $fast ease-in-out, color $fast ease-in-out, border-color $fast ease-in-out);
+
+    &:hover{
+		color: $white;
+        @include transition(background $fast ease-in-out, color $fast ease-in-out, border-color $fast ease-in-out);
+    }
+
+	/*Red Button Styles*/
+	&--red{
+		background-color: $crimson;
+    }
+
+
+	/*Row Button Styles*/
+    &--row{
+        border-left: 1px solid $white;
+
+		&:first-child {
+			border-left: none;
+		}
+
+		&:hover{
+			background: $crimson;
+		}
+    }
+
+	/*Column Button Styles*/
+	&--col{
+		padding-left:1.25rem;
+		padding-right:1.25rem;
+		min-width: 0;
+		background: $wild-sand;
+        border-top: 1px solid $black;
+		color: $black;
+		display: block;
+
+		&:first-child {
+			border-top: none;
+		}
+
+		&:hover,
+		&.active{
+			border-color: $white;
+			background: $black;
+			color: $wild-sand;
+		}
+    }
+}
+.bubble-btn {
+	padding: .6rem 2.5rem;
+	position: relative;
+    text-align: center;
+	background-color: $white;
+	color: $crimson;
+	border: 2px solid $crimson;
+	border-radius: 5rem;
+	cursor: pointer;
+	font-weight: bold;
+	display: inline-block;
+    @include transition(background-color $fast ease-in-out, color $fast ease-in-out);
+
+	&:hover,
+	&.inactive{
+		background: $crimson;
+		span{
+			color: $white;
+		}
+		
+	}
+}
+
+
+/*------ #ARROW BUTTONS --------*/
+
+.arrow-btn{
+	display: inline-block;
+	width: auto;
+	padding-right: 1.25em;
+	text-align: left;
+	cursor: pointer;
+	position: relative;
+		
+	&:after{
+        content: '';
+        position: absolute;
+        display: block;
+		width: .5em;
+		height: .5em;
+		transform:rotate(45deg);
+		right: .5em;
+		top: 50%;
+		margin-top: -.33em;
+		border-bottom: 1px solid $black;
+		border-right: 1px solid $black;
+		transform-origin: 75% 75%;
+		@include transition(transform $fast ease, color $fast ease);
+    }
+
+    &.active{
+
+        &:after{
+            transform: rotate(225deg);
+			border-color: $crimson;
+            @include transition(transform $fast ease, color $fast ease);
+        }
+    }
+	
+
+	/*Arrow Bottom Button Styles*/
+	&--bottom {
+		padding:0 0 1.25em 0;
+		&:after{
+			right: auto;
+			top: auto;
+			left: 50%;
+			margin-left: -.25em;
+			bottom: .5em;
+        }
+	}
+}
+.active > .arrow-btn {
+
+    &:after{
+        transform: rotate(225deg);
+		border-color: $crimson;
+        @include transition(transform $fast ease, color $fast ease);
+    }
+}
+
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #CAROUSEL
+\*------------------------------------*/
+.slick-slider{
+	margin-bottom:0;
+}
+.slick-slide{
+	height: auto;
+}
+
+/*------ #CAROUSEL BUTTONS --------*/
+
+.slick-arrow {
+	height: 6rem;
+	margin-top: -3rem;
+	background: $black;
+	@include spacing(width, 1);
+	z-index: 3;
+	
+	&:before{
+		content: "";
+		display: block;
+		position: absolute;
+		width: 1.5rem;
+		height: 1.5rem;
+		transform:rotate(45deg);
+		top: 36%;
+	}
+
+	&:focus{
+		background: $black;
+	}
+
+	&:hover{
+		background: $gallery;
+
+		&:before {
+			border-color: $mine-shaft;
+		}
+	}
+
+	
+}
+
+.slick-prev{
+	left: 0;
+	
+	&:before{
+		border-bottom: 1px solid $gallery;
+		border-left: 1px solid $gallery;
+		left: 33%
+	}
+	
+ }
+
+.slick-next {
+	right:0;
+
+	&:before{
+		border-top: 1px solid $gallery;
+		border-right: 1px solid $gallery;
+		right: 33%;
+	}
+}
+
+/*------ #CAROUSEL DOTS --------*/
+.slick-dots {
+	bottom: 1.5rem;
+	width: auto;
+	left: 50%;
+	@include transform(translateX(-50%));
+
+	li{
+		padding: 0;
+		height: 10px;
+		width: 10px;
+
+		button {
+			padding: 0px;
+			height: 10px;
+			width: 10px;
+			border: 1px solid transparentize($white, .8);
+			border-radius: 5px;
+			background-color: transparentize($wild-sand, .25);
+			@include transition(border-color $fast ease, background-color $fast ease);
+
+			&:before{
+				content: none;
+			}
+			&:hover{
+				border-color: $white;
+				@include transition(border-color $fast ease);
+			}
+		}
+		&.slick-active{
+			button{
+				border-color: $white;
+				background-color: $white;
+				@include transition(border-color $fast ease, background-color $fast ease);
+			}
+		}
+			
+	}
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #VIDEO
+\*------------------------------------*/
+.video__container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 7px;
+    overflow: hidden;
+	z-index: 0;
+
+	object,
+	embed,
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+    
+	/* TODO: Styles for Videos in Flex containers*/
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #PAGE-HEADER
+\*------------------------------------*/
+.header{
+
+	&__global{
+		padding-top: 1.5rem;
+		@include display-flex;
+		@include flex-flow(row, nowrap);
+		width: 100%;
+		&:after{
+			content: none;
+		}
+
+	}
+	&__info {
+		padding-left: $gutter_pc;
+		@include flex-span(21);
+		@include display-flex;
+		@include justify-content(flex-end);
+		@include flex-direction(column);
+		&--no-address {
+			@include justify-content(center);
+			@include flex-span(18);
+		}
+	}
+	&__logo{
+		@include align-self(center);
+		@include flex-span(3);
+		margin-left: 0;
+		&--no-address {
+			@include flex-span(5);
+		}
+	}
+
+	&__name{
+		margin-bottom: 0;
+		font-weight: 700;
+
+		&__link {
+			color: $black;
+		}
+	}
+
+	&__address{
+		font-size: .8rem;
+		color: $dove-gray;
+	}
+	&__nav {
+		position: fixed;
+		right: 0;
+		top: 0;
+		height: 83px;
+		width: 60px;
+		z-index: 1000;
+
+		&__btn{
+			background-color: transparent;
+			border: 0;
+			outline: 0;
+			height: 83px;
+			width: 60px;
+			@include hamburger-button(21px, 3px, $black, 6px, $fast, $crimson);
+		}
+	}
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #NAVIGATION--HEADER
+\*------------------------------------*/
+
+.nav{
+	list-style: none;
+	font-size: .85714rem;
+
+	&__categories{
+		@include justify-content(flex-end);
+		font-weight: 700;
+		font-size: .85714rem;
+	}
+
+    &__btn {
+		padding: .5em 2em .5em 1em;
+		font-size: .85714rem;
+
+		&:after{
+			right: 1.25em;
+		}
+
+		&:hover{
+			color: $crimson;
+		}
+
+		&.active{
+			background: $mystic;
+			//color: $crimson;
+		}
+    }
+
+	&__wrapper{
+		background: $mystic;
+		border-bottom: 5px solid $mystic;
+	}
+
+    &__list{
+		padding: 2rem 1rem;
+		background: $mystic;
+		@include justify-content(flex-end);
+		@include flex-wrap(nowrap);
+    }
+
+    &__link{
+        padding: 0 2rem;
+		position: relative;
+		border-right: 1px solid $dusty-gray;
+		color: $black;
+		@include flex-basis(25%);
+		text-align: center;
+
+		&:first-child{
+			border-left: 1px solid $dusty-gray;
+		}
+
+		&:after{
+			content:"";
+			position: absolute;
+			bottom: -1em;
+			left: 0;
+			right: 0;
+			height: 1px;
+			background-color: $mystic;
+			@include transition(background-color $fast ease);
+		}
+
+        &:hover{
+            color: $black;
+			&:after{
+				background-color: $crimson;
+				@include transition(background-color $fast ease);
+			}
+        }
+    }
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #PAGE-FOOTER
+\*------------------------------------*/
+
+.footer{
+    padding: 2.5rem 0;
+	border-top: 5px solid $mystic;
+	
+	
+	&__social{
+		padding-bottom: 4rem;
+		@include display-flex;
+		@include flex-flow(row, wrap);
+		&__icon{
+			margin: 0 .5rem .5rem 0;
+			background: $mine-shaft;
+			border-radius: 20px;
+			height: 40px;
+			width: 40px;
+			@include display-flex;
+			@include align-items(center);
+			@include justify-content (center);
+			img {
+				max-width: 16px;
+			}
+		}
+		
+	}
+
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  JS STYLES
+\*------------------------------------*/
+
+/*------ #FEATURE AREA JS STYLES --------*/
+.featureContent {
+	@include accordionTool;
+}
+#featureDisplay{
+	overflow: hidden;
+	position: relative;
+}
+
+/*------ #NAV JS STYLES --------*/
+/* TODO: Make animation for active/hidden */
+.js-toggleContent{
+	@include accordionTool;
+	opacity: 0;
+	&.active{
+		opacity: 1;
+	}
+}
+
+/*------ #WEBFORM JS STYLES --------*/
+#webformHaveTrade {
+	opacity: 0;
+	height: 0;
+	width: 1px;
+	margin: 0;
+	padding: 0;
+}
+
+#tradeAccordion{
+	overflow: hidden;
+}
+
+.aContent, .aContent2{
+	@include accordionTool;
+}
+
+/*------ #CAROUSEL FOUC STYLES --------*/
+.pre-slick{
+	opacity: 0;
+	position: absolute;
+}
+.pre-slick-show{
+	width: 100%;
+	height: auto;
+	display: block;
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #HELPER CLASSES
+\*------------------------------------*/
+
+.hidden,
+.visible__tablet--block,
+.visible__tablet--flex,
+.visible__mobile--block,
+.visible__mobile--flex{
+    display: none;
+}
+
+.link{
+    font-size: inherit;
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.required{
+	color: red;
+}
+
+.overflow{
+	overflow:hidden;
+}
+/*#endregion*/
+
+
+
+
+
+@media screen and (max-width:780px){
+	/*#region ----------------------------*\
+      #GLOBAL/WEBFORM INPUTS
+    \*------------------------------------*/
+
+    input,
+	select{
+		height: 2.5rem;
+    }
+
+	input,
+	textarea {
+		padding-left: .4rem;
+		padding-right: .4rem;
+	}
+	/*#endregion*/
+
+
+
+
+    /*#region ----------------------------*\
+      #HELPER CLASSES
+    \*------------------------------------*/
+
+    .visible__tablet--block{
+        display: block;
+    }
+    .visible__tablet--flex{
+        @include display-flex;
+    }
+
+    .visible__lg{
+        display: none;
+    }
+	/*#endregion*/
+
+
+
+
+	/*#region ----------------------------*\
+      #PAGE-HEADER
+    \*------------------------------------*/
+    .header{
+
+		&__wrap{
+			height:6rem;
+		}
+
+		&__global{
+			padding: 1rem 0 1rem 1rem;
+			height: 6rem;
+			position: fixed;
+			width: auto;
+			left: 0;
+			right: 0;
+			top: 0;
+			margin: 0;
+			background: $white;
+			z-index: 999;
+			border-bottom: 1px solid $gray;
+		}
+		&__logo{
+			@include flex-span(4);
+		}
+
+		&__info{
+			@include flex-span (20);
+			padding-right: 60px;
+		}
+    }
+	/*#endregion*/
+
+
+
+
+	/*#region ----------------------------*\
+      #NAVIGATION
+    \*------------------------------------*/
+	.nav{
+		font-size: .9rem;
+
+		&__wrapper {
+			border-bottom: none;
+		}
+
+		&__btn {
+			padding: 1.5rem;
+			border-bottom: 1px solid $gray;
+			@include transition(background-color);
+
+			&:after{
+				width: 1em;
+				height: 1em;
+				margin-top: -.6em;
+				right: 2em;
+			}
+
+			&.active{
+				background: $black;
+				color: $white;
+				@include transition(background-color);
+
+				&:after{
+					border-color: $white;
+				}
+			}
+		}
+
+		&__list{
+			display: block;
+			padding: 0;
+		}
+
+		&__link{
+			display: block;
+			text-align: left;
+			padding: 1.5rem;
+			border-right: none;
+			border-bottom: 1px solid $gray;
+
+			&:first-child{
+				border-left: none;
+			}
+
+			&:after {
+				content: none;
+			}
+
+		}
+	}
+	/*#endregion*/
+
+
+
+
+	/*#region ----------------------------*\
+      #NAVIGATION JAVASCRIPT (JS)
+    \*------------------------------------*/
+	.js-toggleMenuWrap {
+		overflow: hidden;
+		position: fixed;
+		top: 6rem;
+		height: 0;
+		left: 0;
+		right: 0;
+		z-index: 900;
+		&.active {
+			height: auto;
+		}
+	}
+	.js-toggleContent {
+		opacity: 1;
+	}
+
+    /*------------------------------------*\
+      #NAVIGATION--FOOTER
+    \*------------------------------------*/
+
+    .footer__nav{
+        display: none;
+    }
+
+    .footer__content{
+        @include spacing(width, 24);
+    }
+
+    .social__container{
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .footer__social--img{
+        margin-right: 1rem;
+    }
+	/*#endregion*/
+
+
+
+}
+
+
+
+@media screen and (max-width:600px){
+
+	/*#region ----------------------------*\
+      #GLOBAL/WEBFORM INPUTS
+    \*------------------------------------*/
+    input,
+	select{
+		height: 2.5rem;
+    }
+
+	input,
+	textarea {
+		padding-left: .4rem;
+		padding-right: .4rem;
+	}
+	/*#endregion*/
+
+
+
+	
+    /*#region ----------------------------*\
+      #HELPER CLASSES And Disc
+    \*------------------------------------*/
+
+    .mobile-br{
+        display: block;
+        visibility: hidden;
+        height: 0;
+        width: 0;
+    }
+	.visible__mobile--block{
+        display: block;
+    }
+    .visible__mobile--flex{
+        @include display-flex;
+    }
+	.visible__med{
+        display: none;
+    }
+	.text--disc {
+		
+		ul,
+		ol{
+			margin-left: 1.25rem;
+
+			li{
+				padding-left: 1rem;
+				margin-bottom: 1rem;
+			}
+
+		}
+		p{
+			margin-bottom: 1rem;
+			&:first-of-type{
+				margin-top: 0;
+			}
+		}
+	}
+
+	/*#endregion*/
+
+
+
+	
+    /*#region ----------------------------*\
+      #CTAs/BUTTONS/LINKS
+    \*------------------------------------*/
+
+    /*------ #CTA BUTTONS --------*/
+
+	.btn{
+		display: block;
+		font-size: 1rem;
+		padding: 1.25rem;
+
+		&:hover{
+			color: $white;
+		}
+
+		/*Red Button Styles*/
+		&--red{
+			width: 80%;
+			margin-left:auto;
+			margin-right: auto;
+		}
+
+		/*Row Button Styles*/
+		&--row{
+			border-left: none;
+			border-top: 1px solid $white;
+
+			&:first-child {
+				border-top: none;
+			}
+
+			&:hover{
+				background: $black;
+			}
+		}
+	}
+
+
+
+	/*------ #CAROUSEL BUTTONS --------*/
+
+	/*Slick puts inline styles on their buttons*/
+	.slick-arrow {
+		display: none !important;	
+	}
+	/*#endregion*/
+
+
+
+
+	/*#region ----------------------------*\
+		#HEADER
+    \*------------------------------------*/
+	.header {
+		&__name{
+			font-size: 1.25rem;
+			line-height: 1;
+		}
+		&__info {
+			@include justify-content(center);
+		}
+	}
+	/*#endregion*/
+	
+
+
+	/*#region ----------------------------*\
+		#FOOTER
+    \*------------------------------------*/
+		.footer{
+		padding: 1.5rem 0;
+
+		&__social{
+			padding-bottom: 2rem;
+			
+		}
+
+	}
+	/*#endregion*/
+
+
+
+
+	/*#region ----------------------------*\
+      #VIDEO
+    \*------------------------------------*/
+
+    .video__container--outer{
+        padding: 0 $margin_outer 2rem;
+        background-color: $white;
+
+        .col-16{
+            width: 100%;
+        }
+
+        [class='col-']{
+            width: 100%;
+        }
+
+    }
+	/*#endregion*/
+
+
+
+}   
+
+@media screen and (max-width:480px){
+	/*#region ----------------------------*\
+	  #CAROUSEL
+	\*------------------------------------*/
+	
+	/*------ #CAROUSEL DOTS --------*/
+	.slick-dots {
+		
+		li{
+			height: 5px;
+			width: 5px;
+
+			button {
+				height: 8px;
+				width: 8px;
+				border-radius: 4px;
+				padding: 0;
+			}	
+		}
+	}
+	
+	.header {
+		&__wrap{
+			height: 4rem;
+		}
+		&__global{
+			padding:.5rem;
+			height: 4rem;
+			@include align-items(center);
+		}
+
+		&__address{
+			display: none;
+		}
+
+		&__name{
+			font-size: 1rem;
+		}
+
+		&__nav {
+			&__btn {
+				height: 55px;
+			}
+		}
+
+	}
+	
+	.nav{
+		&__wrapper{
+			top: 4rem;
+		}
+	}
+
+}

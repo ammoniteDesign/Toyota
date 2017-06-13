@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Avalon</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<link href="css/slick.css" rel="stylesheet" media="all">
+    <link href="css/styles.css" rel="stylesheet" media="all">
+</head>
+<body>
+	  
+
+<div class="header__wrap">
+	<header class="row row--padded header__global">
+		<figure class="header__logo">
+			<a href="#" target="_blank"><img alt="Dealer Name Logo" border="0" class="img" height="100" src="images/toyotalogo_100x100_tcm19-17337_h100.png"></a>
+		</figure>
+		<div class="header__info">
+			<h3 class="header__name"><a class="header__name__link" href="#" target="_blank">Dealer Name Test Dealer</a></h3>
+			<address class="header__address">
+				1234 Street Address | City, AA 12345 | (555)555-4567
+			</address>
+		</div>
+	</header>
+</div>
+
+<nav id="mainNav">	
+	<section class="row row--flex nav__categories visible__lg">
+		<div class="js-toggleBtn nav__btn arrow-btn">TOYOTA LINEUP</div>
+		<div class="js-toggleBtn nav__btn arrow-btn">SHOPPING</div>
+		<div class="js-toggleBtn nav__btn arrow-btn">SERVICE</div>
+		<div class="js-toggleBtn nav__btn arrow-btn">GET MOVING</div>
+	</section>
+	<section class="nav__wrapper js-toggleMenuWrap">
+		<ul class="row nav js-toggleWrap">
+			<li class="visible__tablet--block arrow-btn nav__btn js-toggleMobileBtn">TOYOTA LINEUP</li>
+			<li class="js-toggleContent">
+				<div class="nav__list row--flex">
+					<a class="nav__link" href="#" target="_self"><span>Cars &amp; Minivan</span></a>
+					<a class="nav__link" href="#" target="_self"><span>Hybrids</span></a>
+					<a class="nav__link" href="#" target="_self"><span>Crossovers &amp; SUVs</span></a>
+					<a class="nav__link" href="#" target="_self"><span>Trucks</span></a>
+				</div>
+			</li>
+			<li class="visible__tablet--block arrow-btn nav__btn js-toggleMobileBtn">SHOPPING</li>
+			<li class="js-toggleContent">
+				<div class="nav__list row--flex">
+					<a class="nav__link" href="#" target="_blank"><span>SPECIAL OFFERS</span></a>
+					<a class="nav__link" href="#" target="_blank"><span>TOYOTA INVENTORY</span></a>
+					<a class="nav__link" href="#" target="_blank"><span>USED INVENTORY</span></a>
+					<a class="nav__link" href="#" target="_self"><span>TOYOTACARE</span></a>
+				</div>
+			</li>
+			<li class="visible__tablet--block arrow-btn nav__btn js-toggleMobileBtn">SERVICE</li>
+			<li class="js-toggleContent">
+				<div class="nav__list row--flex">
+					<a class="nav__link" href="#" target="_blank"><span>SCHEDULE SERVICE</span></a>
+					<a class="nav__link" href="#" target="_blank"><span>SERVICE COUPONS</span></a>						
+				</div>
+			</li>
+			<li class="visible__tablet--block arrow-btn nav__btn js-toggleMobileBtn">GET MOVING</li>
+			<li class="js-toggleContent" data-element-index="3">
+				<div class="nav__list row--flex">
+					<a class="nav__link" href="#" target="_blank"><span>VALUE YOUR TRADE</span></a>
+					<a class="nav__link" href="#" target="_blank"><span>GET FINANCING</span></a>
+					<a class="nav__link" href="#" target="_blank"><span>FIND US HERE</span></a>
+				</div>
+			</li>
+		</ul>
+	</section>
+	<div class="header__nav visible__tablet--block">
+		<button class="header__nav__btn js-toggleMenuBtn"><span></span></button>
+	</div>
+</nav>
+
+<section class="row">
+	<div class="col-24 hero">
+		<div id="modelCarousel">
+			<img alt="Avalon" border="0" src="images/image1-regular_tcm19-91599.jpg" width="960" height="555" />
+			<img alt="Avalon" border="0" src="images/image2-regular_tcm19-91600.jpg" width="960" height="555" />
+			<img alt="Avalon" border="0" src="images/image3-regular_tcm19-91601.jpg" width="960" height="555" />
+			<img alt="Avalon" border="0" src="images/image4-regular_tcm19-91602.jpg" width="960" height="555" />
+		</div>
+	</div>
+	</div>
+		<h1 class="hero__model-name">AVALON</h1>
+	</div>
+</section>
+
+<section class="row row--flex model__ctas">
+	<a class="btn btn--row flex-col-6" href="#" target="_blank"><span>Take a Test Drive</span></a>
+	<a class="btn btn--row flex-col-6" href="#" target="_blank"><span>See Inventory</span></a>
+	<a class="btn btn--row flex-col-6" href="#" target="_blank"><span>Contact Us</span></a>
+</section>
+
+<section class="webform" id="webformWrap">
+	
+	<header class="row row--padded">
+		<h3 class="aButton active arrow-btn webform__title">Get a Quote</h3>
+	</header>
+	
+
+	<div class="aContent active">
+		<form id="webform" autocomplete="on" data-form-type="GetAQuote">
+			<div class="row row--flex-spaced row--flex-padded webform__section">
+				<fieldset class="flex-col-7 webformVehicle">
+			
+					<select required id="webformVehicleMake" hidden>
+						<option value="">Select Make</option>
+						<option value="200003381" selected>Toyota</option>
+					</select>
+
+					<label class="webform__label" for="webformVehicleModel">Model<span class="required" data-hover="Select a model from the dropdown.">*</span></label>
+					<select class="webform__input" required="" name="model" id="webformVehicleModel">
+						<option value="">Select Model</option>
+						<option value="4Runner">4Runner</option>
+						<option value="86">86</option>
+						<option value="Avalon">Avalon</option>
+						<option value="Avalon Hybrid">Avalon Hybrid</option>
+						<option value="Camry">Camry</option>
+						<option value="Camry Hybrid">Camry Hybrid</option>
+						<option value="Corolla">Corolla</option>
+						<option value="Corolla iM">Corolla iM</option>
+						<option value="Highlander">Highlander</option>
+						<option value="Highlander Hybrid">Highlander Hybrid</option>
+						<option value="Land Cruiser">Land Cruiser</option>
+						<option value="Mirai">Mirai</option>
+						<option value="Prius">Prius</option>
+						<option value="Prius c">Prius c</option>
+						<option value="Prius Prime">Prius Prime</option>
+						<option value="Prius v">Prius v</option>
+						<option value="RAV4">RAV4</option>
+						<option value="RAV4 Hybrid">RAV4 Hybrid</option>
+						<option value="Sequoia">Sequoia</option>
+						<option value="Sienna">Sienna</option>
+						<option value="Tacoma">Tacoma</option>
+						<option value="Tundra">Tundra</option>
+						<option value="Yaris">Yaris</option>
+						<option value="Yaris iA">Yaris iA</option>
+					</select>
+
+					<label class="webform__label" for="webformVehicleYear">Year<span class="required" data-hover="Select a year from the dropdown.">*</span></label>
+					<select class="webform__input" required name="year" id="webformVehicleYear">
+						<option value="">Select Year</option>
+						<option value="401689572">2017</option>
+						<option value="401583408">2016</option>
+					</select>
+
+					<label class="webform__label" for="webformVehicleTrim">Trim</label>
+					<select class="webform__input" name="trim" id="webformVehicleTrim">
+						<option value="">Select Trim</option>
+						<option value="401689591">Limited 4dr Sedan (3.5L 6cyl 6A)</option>
+						<option value="401689590">Touring 4dr Sedan (3.5L 6cyl 6A)</option>
+						<option value="401689592">XLE 4dr Sedan (3.5L 6cyl 6A)</option>
+						<option value="401689593">XLE Plus 4dr Sedan (3.5L 6cyl 6A)</option>
+						<option value="401689594">XLE Premium 4dr Sedan (3.5L 6cyl 6A)</option>
+					</select>
+				</fieldset>
+
+				<fieldset class="flex-col-7 webformConsumer">
+					<label class="webform__label" for="webformFirstName">First Name<span class="required" data-hover="Enter your first name.">*</span></label>
+					<input class="webform__input" id="webformFirstName" name="firstName" required type="text" placeholder="First Name" />
+
+					<label class="webform__label" for="webformLastName">Last Name<span class="required" data-hover="Enter your last name.">*</span></label>
+					<input class="webform__input" id="webformLastName" name="lastName" required type="text" placeholder="Last Name" />
+
+					<label class="webform__label" for="webformEmail">Email<span class="required" data-hover="A valid email address is required.">*</span></label>
+					<input class="webform__input" id="webformEmail" name="email" required type="email" placeholder="Email" />
+				</fieldset>
+
+				<fieldset class="flex-col-7 webformConsumer">
+					<label class="webform__label" for="webformPhone">Phone</label>
+					<input class="webform__input" id="webformPhone" name="phone" type="tel" placeholder="Phone Number" pattern="^[0-9-+s()]*$" />
+
+					<label class="webform__label" for="webformComments">Comments</label>
+					<textarea class="webform__input webform__input--comments" name="additionalComments" id="webformComments" placeholder="Comments"></textarea>
+				</fieldset>
+
+			</div>
+
+			<div class="row row--padded">
+				<label class="arrow-btn aButton2" for="webformHaveTrade">Have a Trade?<i></i></label>
+				<input type="checkbox" id="webformHaveTrade">
+			</div>
+
+			<fieldset class="aContent2 webformTradeVehicle">
+				<div class="row row--flex-spaced row--flex-padded webform__section" id="tradeAccordion">
+					<div class="flex-col-7">
+						<label class="webform__label" for="webformTradeInYear">Year<span class="required" data-hover="Select a year from the dropdown.">*</span></label>
+						<select name="year" id="webformTradeInYear" class="webform__input conditionalRequired" data-prefill="">
+							<option value="">Select Year</option>
+							<option value="2019">2019</option>
+							<option value="2018">2018</option>
+							<option value="2017">2017</option>
+							<option value="2016">2016</option>
+							<option value="2015">2015</option>
+							<option value="2014">2014</option>
+							<option value="2013">2013</option>
+							<option value="2012">2012</option>
+							<option value="2011">2011</option>
+							<option value="2010">2010</option>
+							<option value="2009">2009</option>
+							<option value="2008">2008</option>
+							<option value="2007">2007</option>
+							<option value="2006">2006</option>
+							<option value="2005">2005</option>
+							<option value="2004">2004</option>
+							<option value="2003">2003</option>
+							<option value="2002">2002</option>
+							<option value="2001">2001</option>
+							<option value="2000">2000</option>
+							<option value="1999">1999</option>
+							<option value="1998">1998</option>
+							<option value="1997">1997</option>
+							<option value="1996">1996</option>
+							<option value="1995">1995</option>
+							<option value="1994">1994</option>
+							<option value="1993">1993</option>
+							<option value="1992">1992</option>
+							<option value="1991">1991</option>
+							<option value="1990">1990</option>
+						</select>
+
+						<label class="webform__label disabled" for="webformTradeInMake">Make<span class="required" data-hover="Select a make from the dropdown.">*</span></label>
+						<select name="make" disabled id="webformTradeInMake" class="webform__input conditionalRequired">
+							<option value="">Select Make</option>
+						</select>
+					</div>
+					<div class="flex-col-7">
+						<label class="webform__label disabled" for="webformTradeInModel">Model<span class="required" data-hover="Select a model from the dropdown.">*</span></label>
+						<select name="model" disabled id="webformTradeInModel" class="webform__input conditionalRequired">
+							<option value="">Select Model</option>
+						</select>
+
+						<label class="webform__label disabled" for="webformTradeInTrim">Trim<span class="required" data-hover="Select a trim from the dropdown.">*</span></label>
+						<select class="webform__input conditionalRequired" name="trim" disabled id="webformTradeInTrim">
+							<option value="">Select Trim</option>
+						</select>
+					</div>
+
+					<div class="flex-col-7">
+						<label class="webform__label" for="webformTradeInMileage">Mileage<span class="required" data-hover="Milage is required.">*</span></label>
+						<input class="webform__input conditionalRequired" name="mileage" type="number" step="1000" id="webformTradeInMileage" placeholder="Mileage">
+
+						<label class="webform__label" for="webformTradeInCondition">Condition<span class="required" data-hover="Select a condition from the dropdown.">*</span></label>
+						<select class="webform__input conditionalRequired" id="webformTradeInCondition" name="condition">
+							<option value="">Select Condition</option>
+							<option value="Outstanding">Outstanding</option>
+							<option value="Clean">Clean</option>
+							<option value="Average">Average</option>
+							<option value="Rough">Rough</option>
+							<option value="Damaged">Damaged</option>
+						</select>
+					</div>
+				</div>
+			</fieldset>
+			
+			<div class="row row--flex-spaced row--flex-padded webform__section webform__section--submit">
+				<div class="g-recaptcha flex-col-12" data-sitekey="6LfvIg8TAAAAAEg-3ThsIMP5GiyNG820__kANDtC"></div>
+				<div class="flex-col-8 text--right">
+					<p class="webform__rules">
+						<span class="required">*</span> Required Fields
+					</p>
+					<button id="webformSubmit" type="submit" class="btn btn--red webform__submit"><span class="text">Submit</span><span class="spinner"><i class="bounce1"></i><i class="bounce2"></i><i class="bounce3"></i></span></button>
+				</div>
+			</div>
+		</form>
+	</div>
+</section>
+
+<section class="model__copy row row--padded" id="modelCopy1">
+	<h2 class="model__copy__header aButton3">Indulge your driving senses.</h2>
+	<article class="col-24 aContent3">
+		<p class="model__copy__text">
+			Elegance and efficiency ride together hand in velvet glove inside the Avalon. Luxurious curves and languid lines surround the fine features and innovative driving tech found within the cabin. This is debonair driving style.
+		</p>
+	</article>
+</section>
+
+<section class="row row--flex feature" id="featureArea">
+	<ul class="flex-col-4 feature__btn__wrap">
+		<li class="btn btn--col feature__btn js-toggleBtn">Exterior </li>
+		<li class="btn btn--col feature__btn js-toggleBtn">Interior</li>
+		<li class="btn btn--col feature__btn js-toggleBtn">Performance</li>
+		<li class="btn btn--col feature__btn js-toggleBtn">Technology</li>
+		<li class="btn btn--col feature__btn js-toggleBtn">Safety</li>
+	</ul>
+
+	<div class="flex-col-20 feature__content-wrap js-toggleWrap">
+			<div class="visible__mobile--block arrow-btn feature__btn--mobile js-toggleMobileBtn">Exterior</div>
+			<div class="feature__wrapper js-toggleContent">
+				<div class="row--flex feature__flex">
+					<figure class="flex-col-12 feature__figure">
+						<img alt="Avalon" border="0" class="feature__figure__image" src="images/exterior_regular_tcm19-91603.jpg">
+					</figure>
+					<div class="flex-col-12 feature__article">
+						<h4><strong>Sharp Looks</strong></h4><ul><li>17-in. Alloy Wheels</li><li>Quadrabeam Halogen Headlights</li><li>Smoked LED Taillights</li><li>Dual Chrome-Tipped Integrated Exhaust</li></ul>
+					</div>
+				</div>
+			</div>
+			<div class="visible__mobile--block arrow-btn feature__btn--mobile js-toggleMobileBtn">Interior</div>
+			<div class="feature__wrapper js-toggleContent">
+				<div class="row--flex feature__flex">
+					<figure class="flex-col-12 feature__figure">
+						<img alt="Avalon" border="0" class="feature__figure__image" src="images/interior_regular_tcm19-91604.jpg">
+					</figure>
+					<div class="flex-col-12 feature__article">
+						<h4><strong>Style Inside</strong></h4><ul><li>Available 10-Way Adjustable Driver's Seat</li><li>Dual Zone Automatic Climate Control</li><li>Leather-Trimmed Tilt/Telescopic Steering Wheel</li><li>Acoustic Noise-Reducing Windshield</li></ul>
+					</div>
+
+
+				</div>
+			</div>
+			<div class="visible__mobile--block arrow-btn feature__btn--mobile js-toggleMobileBtn">Performance</div>
+			<div class="feature__wrapper js-toggleContent">
+				<div class="row--flex feature__flex">
+					<figure class="flex-col-12 feature__figure">
+						<img alt="Avalon" border="0" class="feature__figure__image" src="images/performance_regular_tcm19-91605.jpg">
+					</figure>
+					<div class="flex-col-12 feature__article">
+						<h4><strong>Powerful Drive</strong></h4><ul><li>3.5L V6 Engine</li><li>268 Horsepower @ 6200 RPM</li><li>6-Speed Automatic Transmission</li><li>21 City/30 Hwy./24 Combined EPA-est. MPG<sup>1</sup></li></ul>
+					</div>
+
+
+				</div>
+			</div>
+			<div class="visible__mobile--block arrow-btn feature__btn--mobile js-toggleMobileBtn">Technology</div>
+			<div class="feature__wrapper js-toggleContent">
+				<div class="row--flex feature__flex">
+					<figure class="flex-col-12 feature__figure">
+						<img alt="Avalon" border="0" class="feature__figure__image" src="images/technology_regular_tcm19-91609.jpg">
+					</figure>
+					<div class="flex-col-12 feature__article">
+						<h4><strong>Top Tech</strong></h4><ul><li>Available Entune<sup>®</sup> App Suite<sup>2</sup></li><li>Available Wireless Charging System</li><li>Backup Camera<sup>3</sup></li><li>Available Rain-Sensing Wipers</li></ul>
+					</div>
+
+
+				</div>
+			</div>
+			<div class="visible__mobile--block arrow-btn feature__btn--mobile js-toggleMobileBtn">Safety</div>
+			<div class="feature__wrapper js-toggleContent">
+				<div class="row--flex feature__flex">
+					<figure class="flex-col-12 feature__figure">
+						<img alt="Avalon" border="0" class="feature__figure__image" src="images/safety_regular_tcm19-91608.jpg">
+					</figure>
+					<div class="flex-col-12 feature__article">
+						<h4><strong>Safer Travels</strong></h4><ul><li>Toyota Safety Sense<sup>TM4</sup> P</li><li>Lane Departure Alert w/ Steering Assist<sup>5</sup></li><li>Dynamic Radar Cruise Control<sup>6</sup></li><li>Advanced Airbag System<sup>7</sup></li></ul>
+					</div>
+
+
+				</div>
+			</div>
+	</div>
+</section>
+
+<section class="model__copy row row--padded" id="modelCopy2">
+	<h2 class="col-24 model__copy__header aButton4">Take a lap of luxury every day.</h2>
+	<article class="col-24 aContent4">
+		<p class="model__copy__text">The Avalon casts a powerful spell on wheels wherever you go. Its efficiency-focused engineering and refined style attract the right kind of attention at stores, on the street—wherever fashion trends and turns and bends merge magnificently.</p>
+	</article>
+	<figure class="col-24">
+		<img alt="Avalon" border="0" class="img model__copy__image" src="images/my17_avalon_xle_plus_08w6_ds_profile_regular_tcm19-91606.png" width="613" height="207">
+	</figure>
+</section>
+
+<section class="row row--flex">
+	<a class="btn btn--row flex-col-6" href="#" target="_blank"><span>Take a Test Drive</span></a>
+	<a class="btn btn--row flex-col-6" href="#" target="_blank"><span>See Inventory</span></a>
+	<a class="btn btn--row flex-col-6" href="#" target="_blank"><span>Contact Us</span></a>
+</section>
+
+<footer class="footer">
+	<section class="row row--padded footer__social">
+	<a class="footer__social__icon" href="#" target="_blank"><span><img alt="Facebook" border="0" class="img" src="images/facebook_wh_50x50_alteration_tcm19-17184_w32.png" width="32"></span></a>
+	<a class="footer__social__icon" href="#" target="_blank"><span><img alt="Twitter" border="0" class="img" src="images/twitter_wh_62x50_tcm19-17188_w32.png" width="32"></span></a>
+	<a class="footer__social__icon" href="#" target="_blank"><span><img alt="Google+" border="0" class="img" src="images/google_wh_50x50_alteration_tcm19-17186_w32.png" width="32"></span></a>
+	<a class="footer__social__icon" href="#" target="_blank"><span><img alt="YouTube" border="0" class="img" src="images/youtube_wh_71x50_tcm19-17189_w32.png" width="32"></span></a>
+	<a class="footer__social__icon" href="#" target="_blank"><span><img alt="Blog" border="0" class="img" src="images/blogger_wh_50x50_alteration_tcm19-17182_w32.png" width="32"></span></a>
+	<a class="footer__social__icon" href="#" target="_blank"><span><img alt="Pinterest" border="0" class="img" src="images/pinterest_wh_50x50_tcm19-19944_w32.png" width="32"></span></a>
+	<a class="footer__social__icon" href="#" target="_blank"><span><img alt="FourSquare Logo" border="0" class="img" src="images/foursquare_wh_36x50_tcm19-25418_w32.png" width="32"></span></a>
+	<a class="footer__social__icon" href="#" target="_blank"><span><img alt="LinkedIn Logo" border="0" class="img" src="images/linkedin_wh_50x50_alteration_tcm19-25416_w32.png" width="32"></span></a>
+	<a class="footer__social__icon" href="#" target="_blank"><span><img alt="Instagram" border="0" class="img" src="images/instagram_wh_50x50_tcm19-17187_w32.png" width="32"></span></a>
+</section>
+
+
+	<section class="row row--sm-padded">
+		<div class="col-24 text--disc">
+			<p>Prototype shown with options. Production model may vary.</p>
+			<ol>
+				<li>
+					2017 EPA-estimated 21 city/ 30 highway/ 24 combined mpg for Avalon. Actual mileage will vary.
+				</li>
+				<li>
+					Be sure to obey traffic regulations and maintain awareness of road and traffic conditions at all times. Apps/services vary by phone/carrier; functionality depends on many factors. Select apps use large amounts of data; you are responsible for charges. Apps and services subject to change. See toyota.com/entune for details.
+				</li>
+				<li>
+					The backup camera does not provide a comprehensive view of the rear area of the vehicle. You should also look around outside your vehicle and use your mirrors to confirm rearward clearance. Environmental conditions may limit effectiveness and view may become obscured. See <em>Owner's Manual</em> for additional limitations and details.
+				</li>
+				<li>
+					Drivers are responsible for their own safe driving. Always pay attention to your surroundings and drive safely. Depending on the conditions of roads, weather and the vehicle, the system(s) may not work as intended. See <em>Owner's Manual</em> for additional limitations and details.
+				</li>
+				<li>
+					Lane Departure Alert with Steering Assist is designed to read lane markers under certain conditions. It provides a visual and audible alert, and slight steering force when lane departure is detected. It is not a collision-avoidance system or a substitute for safe and attentive driving. Effectiveness is dependent on road, weather and vehicle conditions. See <em>Owner's Manual</em> for additional limitations and details.
+				</li>
+				<li>
+					Dynamic Radar Cruise Control is designed to assist the driver and is not a substitute for safe and attentive driving practices. System effectiveness is dependent on road, weather and traffic conditions. See <em>Owner's Manual</em> for additional limitations and details.
+				</li>
+				<li>
+					All the airbag systems are Supplemental Restraint Systems. All airbags (if installed) are designed to inflate only under certain conditions and in certain types of severe collisions. To decrease the risk of injury from an inflating airbag, always wear seatbelts and sit upright in the middle of the seat as far back as possible. Do not put objects in front of an airbag or around the seatback. Do not use a rearward-facing child seat in any front passenger seat. See <em>Owner's Manual</em> for further information/warnings.
+				</li>
+			</ol>
+		<p>
+			Read our complete <a href="#">privacy policy here</a>.
+		</p>
+		<p>
+			&copy; 2017 Dealer Name Test Dealer. All rights reserved. You can write to us at: Street Address, City, AA 12345.
+		</p>
+		</div>
+	</section>
+</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="scripts/jquery-2.2.0.min.js"><\/script>')</script>
+	<script async src="scripts/recaptcha__en.js" type="text/javascript"></script>
+    <script src="scripts/element-toggle.js" type="text/javascript"></script>
+	<script src="scripts/webform-tool.js" type="text/javascript"></script>
+	<script src="scripts/accordion-tool.js" type="text/javascript"></script>
+	<script src="scripts/slick.js" type="text/javascript"></script>	
+    <script src="scripts/main.js" type="text/javascript"></script>
+</body>
+</html>

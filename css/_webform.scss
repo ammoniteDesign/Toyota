@@ -1,0 +1,189 @@
+﻿/// <reference path="dsplus-styles.scss" />
+
+/*------------------------------------*\
+  #INPUTS
+\*------------------------------------*/
+
+.input__radio--checkbox{
+    -webkit-appearance: none;
+    position: relative;
+
+    &:checked:after{
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 5px;
+        display: block;
+        width: 5px;
+        height: 10px;
+        border: solid $dusty-gray;
+        border-width: 0 2px 2px 0;
+        @include transform(rotate(45deg));
+    }
+}
+
+/*------------------------------------*\
+  #WEBFORM
+\*------------------------------------*/
+
+.webform{
+
+	&__section {
+		padding-bottom: 1rem;
+		&--submit{
+			padding-top: 1rem;
+			@include align-items(flex-end)
+		}
+	}
+
+	&__title {
+		margin-bottom: 0;
+	}
+
+	&__label{
+		position: relative;
+		font-size: .9rem;
+		@include transition(padding-bottom $fast ease-in-out);
+		
+		/*Styles for warning labels*/
+		span:after{
+			content: attr(data-hover);
+			display: none;
+			position: absolute;
+			overflow: hidden;
+			left: 0;
+			right: 0;
+			height: 0;
+			color: red;
+			line-height: 1em;
+			font-size: .8em;
+			padding-top: .1em;
+			opacity: 0;
+			@include transition(padding-bottom $fast ease-in-out, opacity $slow ease-in-out)
+		}
+		&.inputRequired {
+			padding-bottom: 1.25em;
+			@include transition(padding-bottom $fast ease-in-out);
+
+			span:after{
+				display: block;
+				height: 1.25em;
+				opacity: 1;
+				@include transition(padding-bottom $fast ease-in-out, opacity $slow ease-in-out);
+			}
+		}
+	}
+
+	&__input{
+		margin-bottom: .4rem;
+		&--comments{
+			min-height: 79px;
+		}
+	}
+	
+	&__rules{
+		display: inline-block;
+		padding-right: 1em;
+		vertical-align: .1em;
+		font-size: .75rem;
+	}
+
+	&__submit{
+        .text{
+            position: relative;
+            opacity: 1;
+			@include transition(all $fast ease);
+        }
+        .spinner{
+			position: absolute;
+			left: 0;
+			right: 0;
+			opacity: 0;
+			i {
+				width: 10px;
+				height: 10px;
+				background-color: #fff;
+				margin: 0 3px;
+				border-radius: 100%;
+				display: inline-block;
+			}
+        }
+
+		&.inactive {
+			cursor: not-allowed;
+			pointer-events: none;
+            .text{
+                opacity: 0;
+                @include transition(all $fast ease);
+            }
+            .spinner{
+                opacity: 1;
+               i{
+					-webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+					animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+					@include transition(all $fast ease);
+					transform: scale(2.5);
+					&.bounce1{
+						-webkit-animation-delay: -0.32s;
+						animation-delay: -0.32s;
+					}
+					&.bounce2{
+						-webkit-animation-delay: -0.16s;
+						animation-delay: -0.16s;
+					}
+               }
+            }
+        }
+	}
+}
+
+
+
+
+@media screen and (max-width:780px){
+	.webform{
+
+		&__section [class*='flex-col-']{
+			@include flex-grow(1);
+			margin-left: $gutter_pc;
+		}
+
+		&__submit--aside {
+			width: 100%;
+			display: block;
+		}
+
+		&__input--comments{
+			min-height: 93px;
+		}
+	}
+}
+
+@media screen and (max-width:600px){
+	.webform{
+		background: $wild-sand;
+
+		&__title{
+			padding: 1.25rem 2.25rem 1.25rem 0;
+		}
+
+		&__section{
+			[class*='flex-col-']{
+				margin-left: 0;
+			}
+			&--submit {
+				padding-bottom: 2rem;
+			}
+		} 
+
+		&__rules {
+			display: block;
+			text-align: left;
+			margin-bottom: 1rem;
+		}
+
+		&__submit {
+			display: block;
+		}
+	}
+}

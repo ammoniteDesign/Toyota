@@ -1,0 +1,346 @@
+﻿/// <reference path="dsplus-styles.scss" />
+
+/*#region ----------------------------*\
+  #HERO
+\*------------------------------------*/
+.hero{
+    position: relative;
+    &__model-name{
+		color: $white;
+        position: absolute;
+        bottom: 1.5rem;
+        @include spacing(left, 1);
+        z-index: 10;
+		font-weight: 700;
+		line-height: 1;
+		margin-bottom: 0;
+		text-shadow: 0px 0px 10px rgba(150, 150, 150, 0.35);
+		/*span {
+			display: block;
+			font-weight: 700;
+		}*/
+    }
+}
+
+.model__ctas{
+	margin-bottom: 1.5rem;
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #MODEL COPY
+\*------------------------------------*/
+.model__copy{
+    margin-top: 3rem;
+	margin-bottom: 3rem;
+	text-align: center;
+
+	&__header{
+		pointer-events: none;
+		position: relative;
+		padding-bottom: .75rem;
+		margin-bottom: 2rem;
+		font-weight: 200;
+		line-height: 1.1;
+		
+		&:after{
+			content: "";
+			display:block;
+			position: absolute;
+			left: 50%;
+			margin-left: -35px;
+			width: 70px;
+			bottom: 0;
+			border-bottom: 1px solid $dove-gray;
+		}
+	}
+
+	&__image{
+		padding-top: 4rem;
+		padding-bottom: 1rem;
+		margin: 0 auto;
+	}
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #FEATURES
+\*------------------------------------*/
+.feature{
+	background: $wild-sand;
+	@include flex-wrap(nowrap);
+
+	&__btn {
+		@include display-flex;
+		@include flex-grow(1);
+		@include align-items(center);
+		@include justify-content(center);
+		&__wrap{
+			@include display-flex;
+			@include flex-direction(column);
+			border-left: 1px solid $wild-sand;
+			border-right: 1px solid $wild-sand;
+		}
+	}
+
+	&__article{
+		background:$wild-sand;
+		padding: 1rem $one_col;
+		@include align-self(center);
+
+		h4 {
+			font-weight: 400;
+			text-transform: uppercase;
+		}
+		ul{
+			list-style: none;
+		}
+		li{
+			padding-left: 15px;
+			position: relative;
+			margin: .25rem 0;
+
+			&:before{
+				position: absolute;
+				display: block;
+				content: "";
+				height: 4px;
+				width: 4px;
+				border-radius: 2px;
+				left: 2px;
+				top: 8px;
+				background: $black;
+			}
+		}
+	}
+
+	&__figure__image {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+}
+/*#endregion*/
+
+@media screen and (min-width:780px) and (max-width:1055px){
+	/*The buttons need some vertical wiggle room here so they flex nicely*/
+	.feature__btn{
+		padding: 1.25rem;
+	}
+
+}
+
+
+@media screen and (max-width:780px){
+	.hero{
+		&__model-name{
+			position: static;
+			background: $wild-sand;
+			text-align: center;
+			padding:1rem;
+			margin-bottom:0;
+			text-shadow: none;
+			color: $black;
+			span {
+				display: inline;
+			}
+		}
+		.slick-dots{
+			@include spacing(left, 1);
+			bottom: -2.75rem;
+			transform: none;
+			li button {
+				border-color: rgba(0, 0, 0, 0.05);
+				background-color: rgba(0, 0, 0, 0.2);
+
+				&:hover{
+					border-color: rgba(0, 0, 0, 0.1);
+				
+				}
+			}
+			li.slick-active{
+				button{
+					border-color: $black;
+					background-color: $black;
+				}
+			}
+			
+		}
+	}
+
+	.feature{
+		@include flex-wrap(wrap);
+
+		&__article{
+			padding: 1rem ($gutter_pc * 3);
+		}
+
+		&__btn{
+			border-top: none;
+
+			&__wrap{
+				border-left: none;
+				border-bottom: 1px solid $gray;
+				@include flex(1 1 100%);
+				@include flex-direction(row);
+			}
+		}
+	}
+}
+
+@media screen and (max-width:600px){
+	.hero{
+		&__model-name{
+			font-size: 2rem;
+		}
+
+		.slick-dots{
+			bottom: -2.4rem;
+		}
+	}
+	.model{
+		&__ctas {
+			margin-bottom: 0;
+		}
+		&__copy {
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+			&__header{
+				pointer-events: auto;
+				cursor: pointer;
+				padding-bottom: 1.5rem;
+				margin-bottom: 1rem; 
+				line-height: 1;
+				&:after{
+					width: 1rem;
+					height: 1rem;
+					transform:rotate(45deg);
+					right: auto;
+					left: 50%;
+					margin-left: -.66rem;
+					bottom: 0;
+					border-bottom: 1px solid $black;
+					border-right: 1px solid $black;
+					transform-origin: 75% 75%;
+					@include transition(transform $fast ease, color $fast ease);
+				}
+
+				&.active{
+					&:after{
+						transform: rotate(225deg);
+						border-color: $crimson;
+						@include transition(transform $fast ease, color $fast ease);
+					}
+				}
+			}
+		}
+	}
+	
+	.feature{
+		&__btn{
+			&__wrap{
+				display: none;
+			}
+			&--mobile{
+				padding: .75rem 1.5rem .75rem $margin_outer;
+				border-top: 1px solid $gray;
+				text-transform: uppercase;
+				@include transition(background-color);
+
+				&:after{
+					width: 1rem;
+					height: 1rem;
+					margin-top: -.75rem;
+					right: 2rem;
+					border-width: 1px;
+				}
+
+				&.active{
+					background: $black;
+					color: $white;
+					@include transition(background-color);
+
+					&:after{
+						border-color: $white;
+					}
+				}
+			}
+			
+		}
+		&__content-wrap{
+			border-bottom: 1px solid $gray;
+		}
+		&__article{
+
+			h4{ 
+				font-size: 1rem;
+			}
+			ul{
+				font-size: .9rem;
+			}
+		}
+		&__flex{
+			@include display-flex;
+		}
+	}
+
+	.aContent3, .aContent4{
+		@include accordionTool;
+	}
+
+}
+
+@media screen and (max-width:480px){
+
+	.hero{
+		&__model-name{
+			font-size: 1.5rem;
+		}
+
+		.slick-dots{
+			bottom: -2.1rem;
+		}
+	}
+	.feature__article{
+		h4{
+			display: none;
+		}
+		ul {
+			font-size: .8rem;
+		}
+	}
+
+}
+
+@media screen and (max-width:380px){
+	.feature__flex {
+		display: block;
+	}
+	.feature__figure{
+		position: relative;
+		overflow: hidden;
+		height:200px;
+		
+		&__image{
+			max-height: none;
+			width: 100%;
+			@include transform(translate(0, -25%));
+		}
+	}
+	.feature__article{
+		h4{
+			display: block;
+			font-weight: 700;
+		}
+		ul {
+			font-size: .9rem;
+		}
+		
+	}
+}

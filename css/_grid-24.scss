@@ -1,0 +1,263 @@
+﻿/// <reference path="dsplus-styles.scss" />
+/* Gridpak Beta SCSS Generator - http://gridpak.com/  Created by @erskinedesign */
+
+
+/*#region ----------------------------*\
+  #ROWS
+\*------------------------------------*/
+.row {
+    position: relative;
+    max-width: 960px;
+    margin: 0 auto;
+	width: 100%;
+    &:after {
+        content: "";
+        overflow: hidden;
+        clear: both;
+        display: block;
+    }
+	[class*='col-']:first-child {
+		margin-left: 0;
+	}
+}
+
+.row--flex,
+.row--flex-padded,
+.row--flex-spaced {
+    @include display-flex;
+    @include flex-flow(row, wrap);
+    width: 100%;
+	&:after{
+		content: none;
+	}
+}
+
+.row--flex-spaced {
+	@include justify-content(space-between);
+	[class*='flex-col-']{
+		@include flex-grow(0);
+	}
+}
+
+
+.row--sm, .row--sm-padded {
+	max-width: 718px;
+}
+
+@media screen and (max-width:1055px){
+	.row--padded{
+		margin: 0 $margin_outer;
+		width: auto;
+	}
+	.row--flex-padded {
+		width: (100% - ($margin_outer * 2))
+	}
+}
+
+@media screen and (max-width:780px){
+	.row--sm-padded{
+		margin: 0 $margin_outer;
+		width: auto;
+	}
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #COLUMNS
+\*------------------------------------*/
+
+.col-1 {
+    @include span(1);
+}
+
+.col-2 {
+    @include span(2);
+}
+
+.col-3 {
+    @include span(3);
+}
+
+.col-4 {
+    @include span(4);
+}
+
+.col-5 {
+    @include span(5);
+}
+
+.col-6 {
+    @include span(6);
+}
+
+.col-7 {
+    @include span(7);
+}
+
+.col-8 {
+    @include span(8);
+}
+
+.col-9 {
+    @include span(9);
+}
+
+.col-10 {
+    @include span(10);
+}
+
+.col-11 {
+    @include span(11);
+}
+
+.col-12 {
+    @include span(12);
+}
+
+.col-13 {
+    @include span(13);
+}
+
+.col-14 {
+    @include span(14);
+}
+
+.col-15 {
+    @include span(15);
+}
+
+.col-16 {
+    @include span(16);
+}
+
+.col-17 {
+    @include span(17);
+}
+
+.col-18 {
+    @include span(18);
+}
+
+.col-19 {
+    @include span(19);
+}
+
+.col-20 {
+    @include span(20);
+}
+
+.col-21 {
+    @include span(21);
+}
+
+.col-22 {
+    @include span(22);
+}
+
+.col-23 {
+    @include span(23);
+}
+
+.col-24 {
+    @include col-full-width;
+}
+/*#endregion*/
+
+
+
+
+/*#region ----------------------------*\
+  #FLEX COLUMNS
+\*------------------------------------*/
+
+.flex-col-1 {
+    @include flex-span(1);
+}
+.flex-col-2 {
+    @include flex-span(2);
+}
+.flex-col-3 {
+    @include flex-span(3);
+}
+.flex-col-4 {
+    @include flex-span(4);
+}
+.flex-col-5 {
+    @include flex-span(5);
+}
+.flex-col-6 {
+    @include flex-span(6);
+}
+.flex-col-7 {
+    @include flex-span(7);
+}
+.flex-col-8 {
+    @include flex-span(8);
+}
+.flex-col-9 {
+    @include flex-span(9);
+}
+.flex-col-10 {
+    @include flex-span(10);
+}
+.flex-col-11 {
+    @include flex-span(11);
+}
+.flex-col-12 {
+    @include flex-span(12);
+}
+.flex-col-13 {
+    @include flex-span(13);
+}
+.flex-col-14 {
+    @include flex-span(14);
+}
+.flex-col-15 {
+    @include flex-span(15);
+}
+.flex-col-16 {
+    @include flex-span(16);
+}
+.flex-col-17 {
+    @include flex-span(17);
+}
+.flex-col-18 {
+    @include flex-span(18);
+}
+.flex-col-19 {
+    @include flex-span(19);
+}
+.flex-col-20 {
+    @include flex-span(20);
+}
+.flex-col-21 {
+    @include flex-span(21);
+}
+.flex-col-22 {
+    @include flex-span(22);
+}
+.flex-col-23 {
+    @include flex-span(23);
+}
+/*#endregion*/
+
+
+
+
+@media screen and (max-width:600px){
+	[class*='col-']{
+		width: 100%;
+		margin-left: 0;
+	}
+	.row--flex,
+	.row--flex-padded {
+		display: block;
+	}
+	.row--flex-padded {
+		margin: 0 $margin_outer;
+		width: auto;
+	}
+}
